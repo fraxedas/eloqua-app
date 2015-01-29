@@ -1,0 +1,30 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "Playing with node",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.11.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fraxedas/nodejs.git"
+  },
+  "keywords": [
+    "node",
+    "raspberrypi",
+    "camera",
+    "servo"
+  ],
+  "author": "Oscar Fraxedas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fraxedas/nodejs/issues"
+  },
+  "homepage": "https://github.com/fraxedas/nodejs"
+}
