@@ -2,12 +2,13 @@ var http = require("http");
 var express = require("express");
 var app = express();
 
+app.set("view engine", "jade");
+
 app.get("/", function(req, res){
-	res.send("Hello World");
+	res.render("jade/index", {title: "Express + Jade"});
 });
 
 app.get("/user", function(req, res){
-	//res.set("Content-Type", "application/json")
 	res.send({name : "Oscar Fraxedas", isValid: true});
 });
 
