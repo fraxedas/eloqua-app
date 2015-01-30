@@ -2,10 +2,10 @@ var http = require("http");
 var express = require("express");
 var app = express();
 
-app.set("view engine", "jade");
+app.set("view engine", "vash");
 
 app.get("/", function(req, res){
-	res.render("jade/index", {title: "Express + Jade"});
+	res.render("index", {title: "Express + Vash"});
 });
 
 app.get("/user", function(req, res){
