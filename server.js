@@ -2,16 +2,16 @@ var http = require("http");
 var express = require("express");
 var app = express();
 
+var controllers = require("./controllers");
+
+//Setup the view engine
 app.set("view engine", "vash");
 
-app.get("/", function(req, res){
-	res.render("index", {title: "Express + Vash"});
-});
+//Setup the routes
+controllers.init(app);
 
-app.get("/user", function(req, res){
-	res.send({name : "Oscar Fraxedas", isValid: true});
-});
-
+//Create the server
 var server = http.createServer(app);
 
+//Start listening
 server.listen(3000);
