@@ -14,4 +14,4 @@ controllers.init(app);
 var server = http.createServer(app);
 
 //Start listening
-server.listen(3000);
+server.listen(process.env.PORT || 3000)
