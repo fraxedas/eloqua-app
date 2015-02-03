@@ -7,11 +7,15 @@
 			<p class="text-error">Error ocurred: @model.error</p>
 		}
 
-		@model.categories.forEach(function(category){
-			<div><span>
-				@(category.notes ? category.notes.lenght : 0) - 
-			</span><a href="#">@category.name</a></div>
-		})
+		<div class="row">
+			@model.categories.forEach(function(category){
+				<div>
+					<span class="badge">
+						@(category.notes ? category.notes.lenght : 0)</span>
+					<a href="#">@category.name</a>
+				</div>
+			})
+		</div>
 
 	})
 })
