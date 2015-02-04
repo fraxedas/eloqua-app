@@ -1,0 +1,9 @@
+@html.extend("layout", function(model){
+	@html.block("body", function(model){
+		<div class="jumbotron">
+		  <h1>Content from the cloud</h1>
+		  <img src="/image/bird.jpg" />
+		</div>
+
+	})
+})

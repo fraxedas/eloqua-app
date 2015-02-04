@@ -1,25 +1,29 @@
-(function(serviceController){
-    serviceController.init = function(app){
+(function(actionController){
+    actionController.init = function(app){
         var data = require("../data");
 
-		app.get("/service/create", function(req, res){
+		app.all("/action/create", function(req, res){
             data.getActionRecordDefinition(function (err, result) {
                 res.send(result);
             });
         });
 
-        app.post("/service/copy", function (req, res) {
+        app.post("/action/copy", function (req, res) {
             data.getActionRecordDefinition(function (err, result) {
                 res.send(result);
             });
         });
 
-        app.delete("/service/delete", function (req, res) {
+        app.delete("/action/delete", function (req, res) {
             res.status(204).send();
         });
 
-        app.get("/service/configure", function (req, res) {
+        app.get("/action/configure", function (req, res) {
             res.render("configure", { title: "Service configuration"});
+        });
+        
+        app.all("/action/notify", function (req, res) {
+            res.status(204).send();
         });
 	};
 })(module.exports);
