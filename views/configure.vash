@@ -1,0 +1,13 @@
+@html.extend("layout", function(model){
+	@html.block("body", function(model){
+
+		<h1>@model.title</h1>
+		
+		<div class="jumbotron">
+		  <h1>Hello, world!</h1>
+		  <p>...</p>
+		  <p><a class="btn btn-primary btn-lg" href="#" role="button">Do something</a></p>
+		</div>
+
+	})
+})
