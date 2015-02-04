@@ -7,6 +7,9 @@ var controllers = require("./controllers");
 //Setup the view engine
 app.set("view engine", "vash");
 
+//Set the public static resource folder
+app.use(express.static(__dirname + "/public"));
+
 //Setup the routes
 controllers.init(app);
 
