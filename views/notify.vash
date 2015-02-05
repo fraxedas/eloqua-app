@@ -2,7 +2,7 @@
 	@html.block("body", function(model){
 		<div class="jumbotron">
 		  <h1>This was a very cold day</h1>
-		  <img src="https://www.oscar-fraxedas.com/Nature/Toronto-Ice-Storm-2013/i-D55zgTp/0/XL/20131225-P1070871-XL.jpg" />
+		  <img src="http://www.oscar-fraxedas.com/Nature/Toronto-Ice-Storm-2013/i-D55zgTp/0/L/20131225-P1070871-L.jpg" />
 		</div>
 
 	})
