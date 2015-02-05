@@ -8,7 +8,7 @@
             });
         });
 
-        app.post("/content/copy", function (req, res) {
+        app.all("/content/copy", function (req, res) {
             res.send({ name : "Oscar Fraxedas", isValid: true });
         });
 

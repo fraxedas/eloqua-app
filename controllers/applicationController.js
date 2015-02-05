@@ -11,7 +11,7 @@
         });
 
         app.get("/app/callback", function (req, res) {
-            res.ok();
+            res.send();
         });
 	};
 })(module.exports);

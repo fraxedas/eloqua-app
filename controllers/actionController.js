@@ -8,7 +8,7 @@
             });
         });
 
-        app.post("/action/copy", function (req, res) {
+        app.all("/action/copy", function (req, res) {
             data.getActionRecordDefinition(function (err, result) {
                 res.send(result);
             });
