@@ -6,11 +6,33 @@
 
 		</div>
 
+
+
+			@model.endpoints.forEach(function(item){
+				<div class="list-group">
+					<a class="list-group-item active">
+			    		@item.name
+			    	</a>
+
+			    	@item.endpoints.forEach(function(endpoint){
+						<div class="list-group-item list-group-item-success">
+							@endpoint.name : @endpoint.description - <b>@model.root@endpoint.uri</b>
+							<button name="copy-button" type="button" class="btn btn-success btn-xs" data-clipboard-text="@model.root@endpoint.uri" title="@endpoint.name : @endpoint.description">Copy</button>
+						</div>
+					})
+
+			    </div>
+			})
+		
+	    
+  
 		<div class="list-group">
 			<a class="list-group-item active">
 				App endpoints
 			</a>
-			<a href="/app/enable" class="list-group-item list-group-item-success">Enable: status code 200</a>
+			<a href="/app/enable" class="list-group-item list-group-item-success">Enable: status code 200 
+				<button id="copy-button" data-clipboard-text="/app/enable" title="Click to copy me.">Copy</button>
+			</a>
 			<a href="/app/status" class="list-group-item list-group-item-success">Status: status code 200 with a json response</a>
 			<a href="/app/callback" class="list-group-item list-group-item-success">Callback: status code 200</a>
 		</div>
