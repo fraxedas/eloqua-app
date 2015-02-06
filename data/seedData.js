@@ -114,10 +114,6 @@
                 name: "Server error",
                 uri: "/echo/500/error=server",
                 description: "Status code 500 and error=server in the body"
-            },
-            { name: "Enable",
-                uri: "/app/enable",
-                description: "200 status code"
             }]
         }
     ];
