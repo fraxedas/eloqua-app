@@ -22,6 +22,14 @@
                 name: "Enable",
                 uri: "/app/enable",
                 description: "200 status code"
+            },{
+                name: "Status",
+                uri: "/app/status",
+                description: "200 status code"
+            },{
+                name: "Callback",
+                uri: "/app/callback",
+                description: "200 status code"
             }]
         },
         {
@@ -29,12 +37,12 @@
             endpoints: [{
                 name: "Create",
                 uri: "/action/create",
-                description: "200 status code"
+                description: "200 status code with a record definition"
             },
             {
                 name: "Configure",
-                uri: "/action/configue",
-                description: "200 status code"
+                uri: "/action/configure",
+                description: "Html response"
             },
             {
                 name: "Delete",
@@ -55,15 +63,54 @@
         {
             name: "Content endpoints", 
             endpoints: [{
-                name: "Enable",
-                uri: "/app/enable",
-                description: "200 status code"
+                name: "Create",
+                uri: "/content/create",
+                description: "200 status code with a record definition"
+            },
+            {
+                name: "Configure",
+                uri: "/content/configure",
+                description: "Html response"
+            },
+            {
+                name: "Delete",
+                uri: "/content/delete",
+                description: "204 status code"
+            },
+            {
+                name: "Copy",
+                uri: "/content/copy",
+                description: "Same as create"
+            },
+            {
+                name: "Notify",
+                uri: "/content/notify",
+                description: "Html response"
             }]
         },
         {
             name: "Echo endpoints", 
             endpoints: [{
-                name: "Enable",
+                name: "Success",
+                uri: "/echo/200/hello",
+                description: "Status code 200 and hello in the body"
+            },
+            {
+                name: "Created",
+                uri: "/echo/201/created",
+                description: "Status code 201 and created in the body"
+            },
+            {
+                name: "User error",
+                uri: "/echo/404/error=not_found",
+                description: "Status code 404 and error=not_found in the body"
+            },
+            {
+                name: "Server error",
+                uri: "/echo/500/error=server",
+                description: "Status code 500 and error=server in the body"
+            },
+            { name: "Enable",
                 uri: "/app/enable",
                 description: "200 status code"
             }]

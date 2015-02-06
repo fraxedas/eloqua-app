@@ -7,7 +7,6 @@
 		</div>
 
 
-
 			@model.endpoints.forEach(function(item){
 				<div class="list-group">
 					<a class="list-group-item active">
@@ -23,52 +22,6 @@
 
 			    </div>
 			})
-		
-	    
-  
-		<div class="list-group">
-			<a class="list-group-item active">
-				App endpoints
-			</a>
-			<a href="/app/enable" class="list-group-item list-group-item-success">Enable: status code 200 
-				<button id="copy-button" data-clipboard-text="/app/enable" title="Click to copy me.">Copy</button>
-			</a>
-			<a href="/app/status" class="list-group-item list-group-item-success">Status: status code 200 with a json response</a>
-			<a href="/app/callback" class="list-group-item list-group-item-success">Callback: status code 200</a>
-		</div>
-
-
-		<div class="list-group">
-			<a class="list-group-item active">
-				Action service endpoints
-			</a>
-			<a href="/action/create" class="list-group-item list-group-item-success">Create: status code 200 with a record definition response</a>
-			<a href="/action/configure" class="list-group-item list-group-item-success">Configure: status code 200 with an html response</a>
-			<a href="/action/delete" class="list-group-item list-group-item-success">Delete: status code 204</a>
-			<a href="/action/copy" class="list-group-item list-group-item-success">Copy: same as create</a>
-			<a href="/action/notify" class="list-group-item list-group-item-success">Notify: status code 204</a>
-		</div>
-		
-		<div class="list-group">
-			<a class="list-group-item active">
-				Content service endpoints
-			</a>
-			<a href="/content/create" class="list-group-item list-group-item-success">Create: status code 200 with a record definition response</a>
-			<a href="/content/configure" class="list-group-item list-group-item-success">Configure: status code 200 with an html response</a>
-			<a href="/content/delete" class="list-group-item list-group-item-success">Delete: status code 204</a>
-			<a href="/content/copy" class="list-group-item list-group-item-success">Copy: same as create</a>
-			<a href="/content/notify" class="list-group-item list-group-item-success">Notify: status code 200 with an html response</a>
-		</div>
-
-		<div class="list-group">
-			<a class="list-group-item active">
-				Echo endpoints
-			</a>
-			<a href="/echo/200/hello" class="list-group-item list-group-item-success">Status code 200 and hello in the body</a>
-			<a href="/echo/201/created" class="list-group-item list-group-item-info">Status code 201 and created in the body</a>
-			<a href="/echo/404/error=not_found" class="list-group-item list-group-item-warning">Status code 404 and error=not_found in the body</a>
-			<a href="/echo/500/error=server" class="list-group-item list-group-item-danger">Status code 500 and error=server in the body</a>
-		</div>
 
 	})
 })
