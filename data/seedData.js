@@ -86,6 +86,11 @@
                 name: "Notify",
                 uri: "/content/notify",
                 description: "Html response"
+            },
+            {
+                name: "Notify with tracking links",
+                uri: "/content/tracking",
+                description: "Html response with tracking links"
             }]
         },
         {
