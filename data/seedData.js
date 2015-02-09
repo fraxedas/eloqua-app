@@ -97,7 +97,7 @@
             name: "Menu endpoints", 
             endpoints: [{
                 name: "Notify",
-                uri: "/meny/notify",
+                uri: "/menu/notify",
                 description: "Html response"
             }]
         },
