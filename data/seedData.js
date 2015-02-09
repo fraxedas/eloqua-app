@@ -94,6 +94,14 @@
             }]
         },
         {
+            name: "Menu endpoints", 
+            endpoints: [{
+                name: "Notify",
+                uri: "/meny/notify",
+                description: "Html response"
+            }]
+        },
+        {
             name: "Echo endpoints", 
             endpoints: [{
                 name: "Success",
