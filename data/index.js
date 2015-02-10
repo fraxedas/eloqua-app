@@ -14,10 +14,33 @@
         next(null, seedData.endpoints);
     };
 
-    function seedDatabase(){
+    function seedDatabase() {
+        database.getDb(function(err, db) {
+            if(err){
+                console.log("Failed to seed database:" + err);
+            }else{
+                //test if there is data
+                db.apps.count(function(err, count) {
+                    if(err){
+                        console.log("Failed to get database count:" + err);
+                    }else{
+                        if(count ==0){
+                            console.log("Seeding the Database ...");
+                            seedData.initialApps.forEach(function(item) {
+                                db.apps.insert(item, function(err) {
+                                    if(err) console.log("Failed to get database count:" + err);
+                                });
+                            });
+                            console.log("Done seeding the Database");
+                        } else{
+                            console.log("Database .already seeded");
+                        }
+                    }
+                });
+            }
+        });
+    }
 
-    };
-
-    seedDatabase();
+    //seedDatabase();
 
 })(module.exports);

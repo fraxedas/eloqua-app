@@ -6,15 +6,16 @@
 
     var theDb = null;
 
-    database.getDb = function(next){
+    database.getDb = function(next) {
         if(!theDb){
             //connect to the database
-            mongodb.MonoClient.connect(mongodbUrl, function(err, db){
+            mongodb.MongoClient.connect(mongodbUrl, function(err, db){
                 if(err){
                     next(err, null);
                 }else{
                     theDb = {
-                        db:db
+                        db:db,
+                        apps: db.collection("apps")
                     };
                     next(null, theDb);
                 }

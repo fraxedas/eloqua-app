@@ -24,7 +24,7 @@
             res.render("notify", { title: "Service notification" });
         });
 
-        app.all("/content/tracking", function (req, res) {
+        app.all("/content/trackinglink", function (req, res) {
             res.render("tracking", { title: "Service notification" });
         });
 	};

@@ -1,8 +1,26 @@
 (function(data){
+
+    data.initialApps = [
+    {
+        name: "oscar", 
+        descripion: "oscar's test application",
+        services: [
+            {
+                name: "Oscar's Menu",
+                type: "menu"
+            },
+            {
+                name: "Oscar's Content",
+                type: "content"
+            }
+        ]
+    }
+    ];
+
 	data.recordDefinition = {
         ContactID: "{{Contact.Id}}", 
         EmailAddress: "{{Contact.Field(C_EmailAddress)}}"
-    }
+    };
 
     data.actionRecordDefinition = {
         recordDefinition: data.recordDefinition
