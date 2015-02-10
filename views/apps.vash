@@ -1,0 +1,27 @@
+@html.extend("layout", function(model){
+	@html.block("body", function(model){
+		<div class="jumbotron">
+
+			<h1>@model.title</h1>
+
+		</div>
+
+
+			@model.apps.forEach(function(item){
+				<div class="list-group">
+					<a class="list-group-item active">
+			    		<h1>@item.name</h1>
+			    		<h1>@item.descripion</h1>
+			    	</a>
+
+			    	@item.services.forEach(function(service){
+						<div class="list-group-item list-group-item-success">
+							@service.name : @service.type
+						</div>
+					})
+
+			    </div>
+			})
+
+	})
+})

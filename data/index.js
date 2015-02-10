@@ -14,6 +14,23 @@
         next(null, seedData.endpoints);
     };
 
+    data.getApps = function(next) {
+        database.getDb(function(err, db) {
+            if(err){
+                next(err, null);
+            }else{
+                //test if there is data
+                db.apps.find().toArray(function (err, results){
+                   if(err){
+                        next(err, null);
+                    }else{
+                        next(null, results);
+                    } 
+                })
+            }
+        });
+    };
+
     function seedDatabase() {
         database.getDb(function(err, db) {
             if(err){
@@ -24,16 +41,15 @@
                     if(err){
                         console.log("Failed to get database count:" + err);
                     }else{
-                        if(count ==0){
+                        if(count == 0){
                             console.log("Seeding the Database ...");
                             seedData.initialApps.forEach(function(item) {
                                 db.apps.insert(item, function(err) {
                                     if(err) console.log("Failed to get database count:" + err);
                                 });
                             });
-                            console.log("Done seeding the Database");
                         } else{
-                            console.log("Database .already seeded");
+                            console.log("Database already seeded");
                         }
                     }
                 });
@@ -41,6 +57,6 @@
         });
     }
 
-    //seedDatabase();
+    seedDatabase();
 
 })(module.exports);
