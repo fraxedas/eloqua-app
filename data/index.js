@@ -20,11 +20,42 @@
                 next(err, null);
             }else{
                 //test if there is data
-                db.apps.find().toArray(function (err, results){
+                db.apps.find().sort({name: 1}).toArray(function (err, results){
                    if(err){
                         next(err, null);
                     }else{
                         next(null, results);
+                    } 
+                })
+            }
+        });
+    };
+
+    data.createApp = function(name, description, next) {
+        database.getDb(function(err, db) {
+            if(err){
+                next(err);
+            }else{
+                db.apps.find({name: name}).count(function(err, count){
+                    if(err){
+                        next(err);
+                    }else{
+                        if(count != 0){
+                            next("App already exist");
+                        }else {
+                            var app = {
+                                name: name,
+                                description: description,
+                                services: []
+                            };
+                            db.apps.insert(app, function (err){
+                               if(err){
+                                    next(err);
+                                }else{
+                                    next(null);
+                                } 
+                            })
+                        }
                     } 
                 })
             }

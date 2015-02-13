@@ -9,12 +9,6 @@
             });
 		});
 
-		app.get("/apps", function(req, res){
-			data.getApps(function (err, result) {
-				res.render("apps", {title: "Applications", apps: result});
-            });
-		});
-
 		app.get("/author", function(req, res){
 			res.send({name : "Oscar Fraxedas", isValid: true});
 		});

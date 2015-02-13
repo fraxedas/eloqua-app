@@ -3,7 +3,7 @@
     data.initialApps = [
     {
         name: "oscar", 
-        descripion: "oscar's test application",
+        description: "oscar's test application",
         services: [
             {
                 name: "Oscar's Menu",

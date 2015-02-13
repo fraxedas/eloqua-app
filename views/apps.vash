@@ -4,24 +4,36 @@
 
 			<h1>@model.title</h1>
 
+			<div >
+				@if(model.error){
+					<p class="text-warning">@model.error</p>
+				}
+
+				<form action="/apps" role="form" method="post" class="form-inline">
+					<input type="text" name="name" class="form-control" placeholder="Name"/>
+					<input type="text" name="description" class="form-control" placeholder="Description"/>
+					<input type="submit" name="new app" class="btn btn-primary" />
+				</form>
+			</div>
+
 		</div>
 
 
-			@model.apps.forEach(function(item){
-				<div class="list-group">
-					<a class="list-group-item active">
-			    		<h1>@item.name</h1>
-			    		<h1>@item.descripion</h1>
-			    	</a>
+		@model.apps.forEach(function(item){
+			<div class="list-group">
+				<a class="list-group-item active">
+		    		<h1>@item.name</h1>
+		    		<h1>@item.description</h1>
+		    	</a>
 
-			    	@item.services.forEach(function(service){
-						<div class="list-group-item list-group-item-success">
-							@service.name : @service.type
-						</div>
-					})
+		    	@item.services.forEach(function(service){
+					<div class="list-group-item list-group-item-success">
+						@service.name : @service.type
+					</div>
+				})
 
-			    </div>
-			})
+		    </div>
+		})
 
 	})
 })
