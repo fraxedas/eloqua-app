@@ -31,6 +31,33 @@
         });
     };
 
+    data.getApp = function(name, next) {
+        database.getDb(function(err, db) {
+            if(err){
+                next(err);
+            }else{
+                db.apps.findOne({name: name}, next);
+            }
+        });
+    };
+
+    data.clearApps = function(next) {
+        database.getDb(function(err, db) {
+            if(err){
+                next(err, null);
+            }else{
+                //test if there is data
+                db.apps.drop(function (err){
+                   if(err){
+                        next(err);
+                    }else{
+                        next(null);
+                    } 
+                })
+            }
+        });
+    };
+
     data.createApp = function(name, description, next) {
         database.getDb(function(err, db) {
             if(err){
