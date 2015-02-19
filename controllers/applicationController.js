@@ -27,6 +27,16 @@
             });
         });
 
+        app.get("/apps/:name", function(req, res){
+            var name = req.params.name;
+            data.getApps(function (err, result) {
+                res.render("apps", 
+                {
+                    title: name 
+                });
+            });
+        });
+
         app.get("/apps/clear", function(req, res){
             data.clearApps(function (err) {
                 if(err){
