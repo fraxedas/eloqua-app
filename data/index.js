@@ -46,14 +46,7 @@
             if(err){
                 next(err, null);
             }else{
-                //test if there is data
-                db.apps.drop(function (err){
-                   if(err){
-                        next(err);
-                    }else{
-                        next(null);
-                    } 
-                })
+                db.apps.drop(next);
             }
         });
     };
@@ -85,6 +78,16 @@
                         }
                     } 
                 })
+            }
+        });
+    };
+
+    data.addService = function(name, service, next) {
+        database.getDb(function(err, db) {
+            if(err){
+                next(err);
+            }else{
+                db.apps.update({name: name}, {$push: {services: service}}, next);               
             }
         });
     };

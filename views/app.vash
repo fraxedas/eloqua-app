@@ -1,0 +1,28 @@
+@html.extend("layout", function(model){
+	@html.block("body", function(model){
+
+		<div>
+			<a href="/" class="btn btn-info">Back</a>
+
+			<div>
+
+				<div class="list-group">
+					<a class="list-group-item active">
+			    		<h1>@model.name</h1>
+			    		<h1>@model.description</h1>
+			    	</a>
+
+			    	@model.services.forEach(function(service){
+						<div class="list-group-item list-group-item-success">
+							@service.name : @service.type
+						</div>
+					})
+
+			    </div>
+
+
+			<div>
+		</div>
+
+	})
+})

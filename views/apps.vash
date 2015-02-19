@@ -21,7 +21,7 @@
 
 		@model.apps.forEach(function(item){
 			<div class="list-group">
-				<a class="list-group-item active">
+				<a href="/apps/@item.name" class="list-group-item active">
 		    		<h1>@item.name</h1>
 		    		<h1>@item.description</h1>
 		    	</a>

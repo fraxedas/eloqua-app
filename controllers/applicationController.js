@@ -65,5 +65,24 @@
                 }
             });
         });
+
+        app.post("/api/apps/:name/services", function(req, res){
+            var name = req.params.name;
+
+            var service = {
+                name: req.body.name,
+                type: req.body.type
+            }
+            
+            data.addService(name, service, function (err) {
+                if(err){
+                    console.log(err); 
+                    res.send(500, err);
+                }else{
+                    res.set("Content-Type", "application/json");
+                    res.status(201).send(service);
+                }
+            });
+        });
 	};
 })(module.exports);
