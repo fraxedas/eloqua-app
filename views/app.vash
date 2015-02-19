@@ -1,8 +1,4 @@
 @html.extend("layout", function(model){
-	@html.block("scripts", function(model){
-		<script type="text/javascript" src="/lib/socket.io-client/socket.io.js"></script>
-		<script type="text/javascript" src="/js/main.js"></script>
-	})
 
 	@html.block("body", function(model){
 

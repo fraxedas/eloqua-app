@@ -59,7 +59,6 @@
                     res.redirect("/apps");
                 }else{
                     res.redirect("/apps");
-                    //res.redirect("/services/" + name);
                 }
             });
         });

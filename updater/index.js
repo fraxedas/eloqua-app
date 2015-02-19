@@ -8,7 +8,9 @@
         io.sockets.on("connection", function(socket){
             console.log("socket was connected");
 
-            socket.emit("showThis", "this is from the server");
+            socket.on("newApp", function(data){
+                socket.broadcast.emit("broadcast newApp", data);
+            });
         });
     };
 

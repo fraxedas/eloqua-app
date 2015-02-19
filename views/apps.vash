@@ -1,4 +1,9 @@
 @html.extend("layout", function(model){
+	@html.block("scripts", function(model){
+		<script type="text/javascript" src="/lib/socket.io-client/socket.io.js"></script>
+		<script type="text/javascript" src="/js/main.js"></script>
+	})
+
 	@html.block("body", function(model){
 		<div class="jumbotron">
 
@@ -10,9 +15,9 @@
 				}
 
 				<form action="/apps" role="form" method="post" class="form-inline">
-					<input type="text" name="name" class="form-control" placeholder="Name"/>
+					<input id="appName" type="text" name="name" class="form-control" placeholder="Name"/>
 					<input type="text" name="description" class="form-control" placeholder="Description"/>
-					<input type="submit" name="new app" class="btn btn-primary" />
+					<input id="newApp" type="submit" name="new app" class="btn btn-primary" />
 				</form>
 			</div>
 
