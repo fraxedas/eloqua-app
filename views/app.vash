@@ -1,4 +1,9 @@
 @html.extend("layout", function(model){
+	@html.block("scripts", function(model){
+		<script type="text/javascript" src="/lib/socket.io-client/socket.io.js"></script>
+		<script type="text/javascript" src="/js/main.js"></script>
+	})
+
 	@html.block("body", function(model){
 
 		<div>
@@ -8,11 +13,11 @@
 
 				<div class="list-group">
 					<a class="list-group-item active">
-			    		<h1>@model.name</h1>
-			    		<h1>@model.description</h1>
+			    		<h1>@model.app.name</h1>
+			    		<h1>@model.app.description</h1>
 			    	</a>
 
-			    	@model.services.forEach(function(service){
+			    	@model.app.services.forEach(function(service){
 						<div class="list-group-item list-group-item-success">
 							@service.name : @service.type
 						</div>

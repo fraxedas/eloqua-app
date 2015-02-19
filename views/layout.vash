@@ -9,6 +9,7 @@
   <body>
     <div>
       @html.block("body")
+      @html.block("scripts")
       <script type="text/javascript" src="/lib/underscore/underscore-min.js"></script>
       <script type="text/javascript" src="/lib/jquery/dist/jquery.min.js"></script>
       <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>

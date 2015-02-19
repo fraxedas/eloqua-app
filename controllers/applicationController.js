@@ -29,10 +29,11 @@
 
         app.get("/apps/:name", function(req, res){
             var name = req.params.name;
-            data.getApps(function (err, result) {
-                res.render("apps", 
+            data.getApp(name, function (err, result) {
+                res.render("app", 
                 {
-                    title: name 
+                    title: name,
+                    app: result
                 });
             });
         });

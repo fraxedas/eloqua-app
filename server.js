@@ -37,4 +37,7 @@ controllers.init(app);
 var server = http.createServer(app);
 
 //Start listening
-server.listen(process.env.PORT || 3000)
+server.listen(process.env.PORT || 3000);
+
+var updater = require("./updater");
+updater.init(server);
