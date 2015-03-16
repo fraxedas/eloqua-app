@@ -13,5 +13,5 @@
         applicationController.init(app);
         menuController.init(app);
         echoController.init(app);
-    }
+    };
 })(module.exports);

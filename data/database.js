@@ -2,7 +2,7 @@
 	var mongodb = require("mongodb");
 
     //local url or heroku
-    var mongodbUrl = process.env.MONGOLAB_URI || "mongodb://localhost:27017/nebula"
+    var mongodbUrl = process.env.MONGOLAB_URI || "mongodb://localhost:27017/nebula";
 
     var theDb = null;
 
@@ -19,7 +19,7 @@
                     };
                     next(null, theDb);
                 }
-            })
+            });
         }else{
             next(null, theDb);
         }

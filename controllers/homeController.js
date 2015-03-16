@@ -4,7 +4,7 @@
 		
 		app.get("/", function(req, res){
 			data.getEndpoints(function (err, result) {
-				var url = req.protocol + "://" + req.get('host')
+				var url = req.protocol + "://" + req.get('host');
                 res.render("index", {title: "CloudApp to integrate with Eloqua", endpoints: result, root: url});
             });
 		});

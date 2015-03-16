@@ -82,7 +82,7 @@
             var service = {
                 name: req.body.name,
                 type: req.body.type
-            }
+            };
             
             data.addService(name, service, function (err) {
                 if(err){

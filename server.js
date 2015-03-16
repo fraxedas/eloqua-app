@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
  
 // parse application/json
 app.use(bodyParser.json());
-
+//Todo - Oscar
 // flash
 app.use(cookieParser());
 app.use(session(

@@ -15,7 +15,11 @@
     "socket.io": "^1.3.4",
     "vash": "^0.7.12-1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-watch": "^0.6.1"
+  },
   "scripts": {
     "test": "test",
     "start": "node server.js"

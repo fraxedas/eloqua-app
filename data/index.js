@@ -26,7 +26,7 @@
                     }else{
                         next(null, results);
                     } 
-                })
+                });
             }
         });
     };
@@ -60,7 +60,7 @@
                     if(err){
                         next(err);
                     }else{
-                        if(count != 0){
+                        if(count !== 0){
                             next("App already exist");
                         }else {
                             var app = {
@@ -74,10 +74,10 @@
                                 }else{
                                     next(null);
                                 } 
-                            })
+                            });
                         }
                     } 
-                })
+                });
             }
         });
     };
@@ -102,7 +102,7 @@
                     if(err){
                         console.log("Failed to get database count:" + err);
                     }else{
-                        if(count == 0){
+                        if(count === 0){
                             console.log("Seeding the Database ...");
                             seedData.initialApps.forEach(function(item) {
                                 db.apps.insert(item, function(err) {
