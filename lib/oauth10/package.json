@@ -1,0 +1,12 @@
+{
+  "name": "silversurfer-oauth10",
+  "version": "1.0.0",
+  "description": "Oauth 1.0 verification",
+  "main": "server.js",
+  "author": "Oscar Fraxedas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fraxedas/nodejs/issues"
+  },
+  "homepage": "https://github.com/fraxedas/nodejs"
+}
