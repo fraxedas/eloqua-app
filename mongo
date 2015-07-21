@@ -1,1 +1,0 @@
-~/Applications/mongodb/mongod -dbpath ~/Applications/mongodb/data --rest
