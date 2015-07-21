@@ -1,22 +1,8 @@
 (function(applicationController){
 
     var data = require("../data");
-    var eloquaOauth = require("../lib/eloqua-oauth");
-    var appId = 'id';
-    var appSecret = 'oscar';
     
     applicationController.init = function(app){
-		
-		app.all("/app/oauth", function(req, res){
-            var authorize = eloquaOauth.authorize({
-                client_id: appId,
-                client_secret: appSecret
-            });
-            res.statusCode = authorize.status;
-            res.setHeader('Location', authorize.uri);
-            res.end();
-        });
-
         app.post("/app/enable", function(req, res){
             res.send({ name : "Oscar Fraxedas", isValid: true });
         });
