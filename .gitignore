@@ -32,3 +32,4 @@ nodejs.v12.suo
 obj/Debug/nodejs.njsproj.FileListAbsolute.txt
 obj/Debug/nodejs.njsprojResolveAssemblyReference.cache
 .idea
+persist/

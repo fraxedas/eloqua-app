@@ -7,25 +7,29 @@
     oauthController.init = function(oauth){
 		
 		oauth.all("/oauth/:appId/:installId", function(req, res){
-            var authorize = eloquaOauth.authorize({
+            eloquaOauth.authorize({
                 client_id: appId,
                 redirect_uri: req.protocol + "://" + req.get('host') + '/callback/{appId}/{installId}',
                 state: req.params.appId + ':' + req.params.installId
+            }, function (uri, status) {
+                res.set('Location', uri).status(status).send();
             });
-            res.statusCode = authorize.status;
-            res.setHeader('Location', authorize.uri);
-            res.end();
         });
 
         
-        oauth.all("/callback/:appId/:installId?code={code}&state={state}", function(req, res){
+        oauth.all("/callback/:appId/:installId", function(req, res){
             var authenticate = {
-                code: appId,
+                code: req.query.code,
+                redirect_uri: req.protocol + "://" + req.get('host') + '/callback/{appId}/{installId}',
                 client_secret: appSecret
             };
-            res.statusCode = authorize.status;
-            res.setHeader('Location', authorize.uri);
-            res.end();
+            eloquaOauth.grant(authenticate, function (error, body) {
+                if (error) {
+                    //redirect to error
+                }else{
+                    //redirect to catalogs
+                }
+            });
         });
   
 	};
