@@ -1,0 +1,27 @@
+@html.extend("layout", function(model){
+
+	@html.block("body", function(model){
+
+		<div>
+			<a href="/" class="btn btn-info">Back</a>
+
+			<div>
+
+				<div>
+
+			    	@model.error
+
+			    </div>
+
+				<div>
+
+			    	@model.body
+
+			    </div>
+
+
+			<div>
+		</div>
+
+	})
+})

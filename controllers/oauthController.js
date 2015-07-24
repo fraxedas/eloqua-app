@@ -1,5 +1,7 @@
 (function(oauthController){
 
+    var persist = require('node-persist');
+    persist.initSync();
     var eloquaOauth = require("../lib/eloqua-oauth");
     var appId = 'id';
     var appSecret = 'oscar';
@@ -18,16 +20,26 @@
 
         
         oauth.all("/callback/:appId/:installId", function(req, res){
+            var code = req.query.code;
+            var state = req.query.state;
+            console.log(state);
+            
             var authenticate = {
-                code: req.query.code,
+                code: code,
                 redirect_uri: req.protocol + "://" + req.get('host') + '/callback/{appId}/{installId}',
                 client_secret: appSecret
             };
             eloquaOauth.grant(authenticate, function (error, body) {
                 if (error) {
-                    //redirect to error
+                    res.render("error", 
+                    {
+                        title: "Oauth error", 
+                        body: body, 
+                        error: error
+                    });
                 }else{
-                    //redirect to catalogs
+                    persist.setItem('oauth',body);
+                    res.redirect("/apps");
                 }
             });
         });
