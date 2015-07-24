@@ -20,8 +20,8 @@
                 client_id: appId,
                 redirect_uri: "https://" + req.get('host') + '/callback',
                 state: installId
-            }, function (uri, status) {
-                res.set('Location', uri).status(status).send();
+            }, function (uri) {
+                res.redirect(uri);
             });
         });
 
