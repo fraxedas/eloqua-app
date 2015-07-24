@@ -9,7 +9,13 @@
 		oauth.all("/oauth/:appId/:installId", function(req, res){
             var appId = req.params.appId;
             var installId = req.params.installId;
-            persist.setItem(installId,appId);                    
+            var callback = req.query.callback;
+            
+            persist.setItem(installId,
+                {
+                    appId: appId,
+                    callback: callback
+                });                    
             eloquaOauth.authorize({
                 client_id: appId,
                 redirect_uri: "https://" + req.get('host') + '/callback',
@@ -22,7 +28,9 @@
         
         oauth.all("/callback", function(req, res){
             var installId = req.query.state;
-            var appId = persist.getItem(installId);
+            var item = persist.getItem(installId);
+            var appId = item.appId;
+            var callback = item.callback;
             var client_secret = persist.getItem(appId);
             var code = req.query.code;
             
@@ -42,7 +50,7 @@
                         error: error
                     });
                 }else{
-                    res.redirect("/oauth/" + appId);
+                    res.redirect(callback);
                 }
             });
         });
