@@ -9,7 +9,7 @@
 		oauth.all("/oauth/:appId/:installId", function(req, res){
             eloquaOauth.authorize({
                 client_id: req.params.appId,
-                redirect_uri: req.protocol + "://" + req.get('host') + '/callback/{appId}/{installId}',
+                redirect_uri: "https://" + req.get('host') + '/callback/{appId}/{installId}',
                 state: req.params.installId
             }, function (uri, status) {
                 res.set('Location', uri).status(status).send();
@@ -26,7 +26,7 @@
             
             var authenticate = {
                 code: code,
-                redirect_uri: req.protocol + "://" + req.get('host') + '/callback/{appId}/{installId}',
+                redirect_uri: "https://" + req.get('host') + '/callback/{appId}/{installId}',
                 client_secret: client_secret
             };
             eloquaOauth.grant(authenticate, function (error, body) {
