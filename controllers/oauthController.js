@@ -29,6 +29,7 @@
             var authenticate = {
                 code: code,
                 redirect_uri: "https://" + req.get('host') + '/callback',
+                client_id: appId,
                 client_secret: client_secret
             };
             eloquaOauth.grant(authenticate, function (error, body) {
