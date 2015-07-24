@@ -30,6 +30,7 @@
                 client_secret: client_secret
             };
             eloquaOauth.grant(authenticate, function (error, body) {
+                persist.setItem(appId + '_oauth',body);                    
                 if (error) {
                     res.render("error", 
                     {
@@ -38,7 +39,6 @@
                         error: error
                     });
                 }else{
-                    persist.setItem(appId + '_oauth',body);
                     res.redirect("/oauth/" + appId);
                 }
             });
