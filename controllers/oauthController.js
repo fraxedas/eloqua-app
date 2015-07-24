@@ -7,30 +7,32 @@
     oauthController.init = function(oauth){
 		
 		oauth.all("/oauth/:appId/:installId", function(req, res){
+            var appId = req.params.appId;
+            var installId = req.params.installId;
+            persist.setItem(installId,appId);                    
             eloquaOauth.authorize({
-                client_id: req.params.appId,
-                redirect_uri: "https://" + req.get('host') + '/callback/{appId}/{installId}',
-                state: req.params.installId
+                client_id: appId,
+                redirect_uri: "https://" + req.get('host') + '/callback',
+                state: installId
             }, function (uri, status) {
                 res.set('Location', uri).status(status).send();
             });
         });
 
         
-        oauth.all("/callback/:appId/:installId", function(req, res){
-            var appId = req.params.appId;
-            var client_secret = persist.getItem(req.params.appId);
+        oauth.all("/callback", function(req, res){
+            var installId = req.query.state;
+            var appId = persist.getItem(installId);
+            var client_secret = persist.getItem(appId);
             var code = req.query.code;
-            var state = req.query.state;
-            console.log(state);
             
             var authenticate = {
                 code: code,
-                redirect_uri: "https://" + req.get('host') + '/callback/{appId}/{installId}',
+                redirect_uri: "https://" + req.get('host') + '/callback',
                 client_secret: client_secret
             };
             eloquaOauth.grant(authenticate, function (error, body) {
-                persist.setItem(appId + '_oauth',body);                    
+                persist.setItem(appId + '_oauth', body);                    
                 if (error) {
                     res.render("error", 
                     {
