@@ -1,3 +1,5 @@
+/// <reference path="typings/node/node.d.ts"/>
+
 var http = require("http");
 var express = require("express");
 var app = express();

@@ -2,7 +2,8 @@
 
     var persist = require('node-persist');
     persist.initSync();
-    var eloquaOauth = require("../lib/eloqua-oauth");
+    var eloqua = require('eloqua-oauth');
+    var redirect = 'https://fraxedas.herokuapp.com/callback';
     
     oauthController.init = function(oauth){
 		
@@ -16,13 +17,9 @@
                     appId: appId,
                     callback: callback
                 });                    
-            eloquaOauth.authorize({
-                client_id: appId,
-                redirect_uri: "https://" + req.get('host') + '/callback',
-                state: installId
-            }, function (uri) {
-                res.redirect(uri);
-            });
+            var uri = eloqua.authorize_uri(appId, redirect, installId);
+            console.log(uri);
+            res.redirect(uri);
         });
 
         
@@ -34,13 +31,7 @@
             var client_secret = persist.getItem(appId);
             var code = req.query.code;
             
-            var authenticate = {
-                code: code,
-                redirect_uri: "https://" + req.get('host') + '/callback',
-                client_id: appId,
-                client_secret: client_secret
-            };
-            eloquaOauth.grant(authenticate, function (error, body) {
+            eloqua.grant(appId, client_secret, code, redirect, function (error, body) {
                 persist.setItem(appId + '_oauth', body);                    
                 if (error) {
                     res.render("error", 
