@@ -27,7 +27,7 @@
     "should": "^5.2.0"
   },
   "scripts": {
-    "test": "test",
+    "test": "mocha",
     "start": "node server.js"
   },
   "repository": {
