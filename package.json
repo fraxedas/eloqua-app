@@ -1,5 +1,5 @@
 {
-  "name": "nodejs",
+  "name": "eloqua-app",
   "version": "1.0.0",
   "description": "Playing with node",
   "main": "server.js",
@@ -32,18 +32,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fraxedas/nodejs.git"
+    "url": "https://github.com/fraxedas/eloqua-app.git"
   },
   "keywords": [
     "node",
-    "raspberrypi",
-    "camera",
-    "servo"
+    "eloqua",
+    "cloud",
+    "app"
   ],
   "author": "Oscar Fraxedas",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fraxedas/nodejs/issues"
+    "url": "https://github.com/fraxedas/eloqua-app/issues"
   },
-  "homepage": "https://github.com/fraxedas/nodejs"
+  "homepage": "https://github.com/fraxedas/eloqua-app"
 }

@@ -7,4 +7,4 @@ deploy:
     secure: TKUkCEsiV3eOBZeAGqUoYvaxdrNDDlUPqggj1f+KKLKQo3ooJwyhobdwr9vYKZyxpW1CNbYTpm05CnUCXkWGUTz47tqTTd6nf83bIkeX3JZzelTJgeSfDNI7jiJuFDZr8oeaS3J00C8CFPpvqH/Pn3YsF3Eo0Bhn49tm83/8SeE=
   app: fraxedas
   on:
-    repo: fraxedas/nodejs
+    repo: fraxedas/eloqua-app

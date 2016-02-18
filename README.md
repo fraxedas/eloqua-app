@@ -1,6 +1,5 @@
-nodejs
+Eloqua App
 ======
 
-nodejs intro project
+This is a sample cloud application to play with node and eloqua
 
-I'll be using it to test some packages
