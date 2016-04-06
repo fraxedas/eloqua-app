@@ -1,9 +1,10 @@
 var assert = require("assert");
+var seed = require("../data/seedData")
 
-describe('The Feature', function(){
+describe('Initial data', function(){
     describe('The scenario', function(){
-        it('should ...', function(){
-            assert.ok(true);
+        it('should not be empty', function(){
+            assert.ok(seed.initialApps);
         })
     })
 });
