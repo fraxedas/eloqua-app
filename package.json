@@ -1,34 +1,43 @@
 {
   "name": "eloqua-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Playing with node",
   "main": "server.js",
   "dependencies": {
-    "body-parser": "^1.11.0",
+    "body-parser": "^1.15.0",
     "connect-flash": "^0.1.1",
-    "cookie-parser": "^1.3.3",
-    "eloqua-oauth": "^0.1.1",
-    "express": "^4.11.1",
-    "express-session": "^1.10.2",
-    "mongodb": "^1.4.30",
-    "node-persist": "0.0.3",
-    "qs": "^3.1.0",
-    "request": "^2.57.0",
+    "cookie-parser": "^1.4.1",
+    "eloqua-oauth": "^1.3.9",
+    "express": "^4.13.4",
+    "express-session": "^1.13.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "mongodb": "^2.1.14",
+    "node-persist": "0.0.11",
+    "qs": "^6.1.0",
+    "request": "^2.70.0",
     "session": "^0.1.0",
-    "silversurfer-oauth10": "^1.0.1",
-    "socket.io": "^1.3.4",
-    "vash": "^0.7.12-1"
+    "should": "^8.3.0",
+    "silversurfer-oauth10": "^1.2.3",
+    "socket.io": "^1.4.5",
+    "vash": "^0.11.2"
   },
   "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-contrib-jshint": "^0.11.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "mocha": "^2.2.1",
-    "should": "^5.2.0"
+    "coveralls": "^2.11.9",
+    "grunt": "^1.0.1",
+    "grunt-contrib-jshint": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-coveralls": "^1.0.0",
+    "mocha": "^2.4.5",
+    "mocha-lcov-reporter": "^1.2.0",
+    "should": "^8.3.0"
   },
   "scripts": {
     "test": "mocha",
-    "start": "node server.js"
+    "start": "node server.js",
+    "cover": "istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec",
+    "publish-cover": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && grunt coveralls"
   },
   "repository": {
     "type": "git",

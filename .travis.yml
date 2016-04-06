@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-- 0.10.36
+- 5.6.0
 deploy:
   provider: heroku
   api_key:
@@ -8,3 +8,9 @@ deploy:
   app: fraxedas
   on:
     repo: fraxedas/eloqua-app
+before_install:
+ - "npm install istanbul -g"
+ - "npm install mocha-cli -g"
+ - "npm install grunt-cli -g"
+script: "mocha"
+after_script: "npm run-script publish-cover"
