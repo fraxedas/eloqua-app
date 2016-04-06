@@ -5,7 +5,7 @@ deploy:
   provider: heroku
   api_key:
     secure: tIUwfl+8RRbD2+/YgrKngj8uEnCr1MrnJyKLFvyxKhk/rWebd6p1V5wJG2tBu1WuMMdrjTOGOfp7/UDxBQ2+KdKo9CErV+wt+sA9RDju2DofMouGces5c8wo1ldc8BvDq0LIWrhH+a8Vk8tmrZP/dNzl+a+Lz2zRaBcC7dN0/QI=
-  app: fraxedas
+  app: eloqua-app
   on:
     repo: fraxedas/eloqua-app
 before_install:
