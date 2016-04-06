@@ -4,13 +4,13 @@ node_js:
 deploy:
   provider: heroku
   api_key:
-    secure: TKUkCEsiV3eOBZeAGqUoYvaxdrNDDlUPqggj1f+KKLKQo3ooJwyhobdwr9vYKZyxpW1CNbYTpm05CnUCXkWGUTz47tqTTd6nf83bIkeX3JZzelTJgeSfDNI7jiJuFDZr8oeaS3J00C8CFPpvqH/Pn3YsF3Eo0Bhn49tm83/8SeE=
-  app: fraxedas
+    secure: tIUwfl+8RRbD2+/YgrKngj8uEnCr1MrnJyKLFvyxKhk/rWebd6p1V5wJG2tBu1WuMMdrjTOGOfp7/UDxBQ2+KdKo9CErV+wt+sA9RDju2DofMouGces5c8wo1ldc8BvDq0LIWrhH+a8Vk8tmrZP/dNzl+a+Lz2zRaBcC7dN0/QI=
+  app: eloqua-app
   on:
     repo: fraxedas/eloqua-app
 before_install:
- - "npm install istanbul -g"
- - "npm install mocha-cli -g"
- - "npm install grunt-cli -g"
-script: "mocha"
-after_script: "npm run-script publish-cover"
+- npm install istanbul -g
+- npm install mocha-cli -g
+- npm install grunt-cli -g
+script: mocha
+after_script: npm run-script publish-cover
