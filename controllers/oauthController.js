@@ -3,7 +3,7 @@
     var persist = require('node-persist');
     persist.initSync();
     var eloqua = require('eloqua-oauth');
-    var redirect = 'https://fraxedas.herokuapp.com/callback';
+    var redirect = 'https://eloqua-app.herokuapp.com/callback';
     
     oauthController.init = function(oauth){
 		

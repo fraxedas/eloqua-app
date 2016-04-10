@@ -17,3 +17,4 @@ ratings:
 exclude_paths:
 - test/
 - public/lib/
+- node_modules/

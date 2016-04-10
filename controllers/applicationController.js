@@ -1,6 +1,10 @@
 (function(applicationController){
 
     var data = require("../data");
+    var persist = require('node-persist');
+    persist.initSync();
+    var eloqua = require('eloqua-oauth').verification;
+    
     
     applicationController.init = function(app){
         app.post("/app/enable", function(req, res){
@@ -9,6 +13,18 @@
         
         app.get("/app/status", function (req, res) {
             res.send({ message : "I'm alive" });
+        });
+        
+        app.get("/app/:appId/status", function (req, res) {
+            var appId = req.params.appId;
+            var client_secret = persist.getItem(appId);
+            var url = req.protocol + '://' + req.get('host') + req.originalUrl;
+            if(eloqua.verify(url, req.method, appId, client_secret)){
+                res.send({ message : "I'm alive" });
+            }
+            else{
+                res.send({ message : "Oauth verification failed on " + url});
+            }
         });
 
         app.get("/app/callback", function (req, res) {
