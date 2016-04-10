@@ -18,7 +18,7 @@
         app.get("/app/:appId/status", function (req, res) {
             var appId = req.params.appId;
             var client_secret = persist.getItem(appId);
-            var url = req.protocol + '://' + req.get('host') + req.originalUrl;
+            var url = 'https://' + req.get('host') + req.originalUrl;
             if(eloqua.verify(url, req.method, appId, client_secret)){
                 res.send({ message : "I'm alive" });
             }
