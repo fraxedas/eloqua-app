@@ -15,4 +15,4 @@ before_install:
 script: mocha
 after_script: 
 - npm run-script publish-cover
-- curl -X POST https://eloqua-app.herokuapp.com/$appId/$appSecret
+- curl -X POST https://eloqua-app.herokuapp.com/secret/$appId/$appSecret
