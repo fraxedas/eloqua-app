@@ -2,7 +2,7 @@
 
     var persist = require('node-persist');
     persist.initSync();
-    var eloqua = require('eloqua-oauth');
+    var eloqua = require('eloqua-oauth').authentication;
     var redirect = 'https://eloqua-app.herokuapp.com/callback';
     
     oauthController.init = function(oauth){
