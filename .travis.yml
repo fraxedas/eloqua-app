@@ -13,4 +13,6 @@ before_install:
 - npm install mocha-cli -g
 - npm install grunt-cli -g
 script: mocha
-after_script: npm run-script publish-cover
+after_script: 
+- npm run-script publish-cover
+- curl -X POST https://eloqua-app.herokuapp.com/$appId/$appSecret
