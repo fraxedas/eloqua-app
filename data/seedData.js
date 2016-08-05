@@ -19,7 +19,9 @@
 
 	data.recordDefinition = {
         ContactID: "{{Contact.Id}}", 
-        EmailAddress: "{{Contact.Field(C_EmailAddress)}}"
+        EmailAddress: "{{Contact.Field(C_EmailAddress)}}",
+        FirstName: "{{Contact.Field(C_FirstName)}}",
+        LastName: "{{Contact.Field(C_LastName)}}"
     };
 
     data.actionRecordDefinition = {
