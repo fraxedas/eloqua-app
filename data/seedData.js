@@ -32,7 +32,7 @@
         recordDefinition: data.recordDefinition,
         height: 300,
         width: 400,
-        editorImageUrl: "http://www.oscar-fraxedas.com/Nature/Bird-Kindom/i-QrQfsWg/0/XL/P1120087-XL.jpg"
+        editorImageUrl: "https://eloqua-app.herokuapp.com/image/opower.jpg"
     };
 
     data.endpoints = [
