@@ -30,7 +30,7 @@
 
     data.contentRecordDefinition = {
         recordDefinition: data.recordDefinition,
-        height: 300,
+        height: 209,
         width: 400,
         editorImageUrl: "https://eloqua-app.herokuapp.com/image/opower.jpg"
     };
