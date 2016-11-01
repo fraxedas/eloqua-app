@@ -33,4 +33,5 @@ obj/Debug/nodejs.njsproj.FileListAbsolute.txt
 obj/Debug/nodejs.njsprojResolveAssemblyReference.cache
 .idea
 persist/
-.vscode/
+.vscode
+.settings
